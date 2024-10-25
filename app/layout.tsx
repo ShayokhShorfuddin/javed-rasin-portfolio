@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
-import gsap from "gsap";
-import Lenis from "lenis";
-import { useEffect } from "react";
-import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger);
+import Template from "./template";
 
 export const metadata: Metadata = {
   title: "Javed Rasin | Portfolio",
@@ -15,24 +9,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  // Setting up lenis with gsap
-  useEffect(() => {
-    const lenis = new Lenis();
-    lenis.on("scroll", ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
-  });
-
+}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Template>{children}</Template>
+      </body>
     </html>
   );
 }
