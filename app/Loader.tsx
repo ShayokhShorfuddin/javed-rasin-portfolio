@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 gsap.registerPlugin(useGSAP);
 
-export default function Loader() {
+export default function Loader({ onComplete }: { onComplete: () => void }) {
   const sentences = [
     "Who am I?",
     "An agent of justice.",
@@ -17,10 +17,11 @@ export default function Loader() {
   const loaderRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const timeline = gsap.timeline();
+    const timeline = gsap.timeline({
+      onComplete: onComplete,
+    });
 
     sentences.forEach((_, index) => {
-      // Pre-create the elements in the JSX instead of dynamically
       const element = loaderRef.current?.querySelector(`#text-${index}`);
 
       timeline
@@ -46,7 +47,7 @@ export default function Loader() {
         <h1
           key={index}
           id={`text-${index}`}
-          className="text-3xl opacity-0 hidden"
+          className="text-3xl font-mono opacity-0 hidden"
         >
           {sentence}
         </h1>
