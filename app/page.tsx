@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Hero from "./Hero";
 import Loader from "./Loader";
+import Writer from "./Writer";
 
 export default function Page() {
   const [loaderComplete, setLoaderComplete] = useState(false);
@@ -15,6 +16,7 @@ export default function Page() {
     <main>
       <Loader onComplete={handleComplete} />
       {loaderComplete && <Hero />}
+      <Writer />
     </main>
   );
 }

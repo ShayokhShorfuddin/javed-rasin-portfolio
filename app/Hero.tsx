@@ -86,7 +86,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="container flex flex-col items-center mt-10 mx-auto h-full">
+    <section className="container flex flex-col items-center pt-10 mx-auto h-screen">
       <p className="text-2xl font-outfit mb-5 opacity-0" id="hello">
         Hello there{" "}
         <span
@@ -130,7 +130,7 @@ export default function Hero() {
           deg={courtDeg}
         />
         <TextBox
-          className={`bg-blue-200 bottom-0 left-1/3 opacity-0`}
+          className={`bg-orange-200 bottom-0 left-1/3 opacity-0`}
           sentence="Writer, Editor & Publisher at ঈহা প্রকাশ ✒️"
           id="writer"
           deg={writerDeg}
