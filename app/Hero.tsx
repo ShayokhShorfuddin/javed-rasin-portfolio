@@ -16,10 +16,8 @@ export default function Hero() {
   const nameRef = useRef<HTMLHeadingElement>(null);
   const dragAreaRef = useRef<HTMLDivElement>(null);
 
-  const degrees = [-7, -6, -5, -4, -3, 0, 1, 3, 4, 5, 6, 7];
-
   function pickDeg(): number {
-    return degrees[Math.floor(Math.random() * degrees.length)];
+    return gsap.utils.random(-7, 7, 1);
   }
 
   // Generating random degrees for each element
@@ -29,27 +27,6 @@ export default function Hero() {
 
   useGSAP(() => {
     const timeline = gsap.timeline();
-
-    // Setting up the draggable elements
-    Draggable.create("#sed", {
-      type: "x,y",
-      bounds: dragAreaRef.current,
-    });
-
-    Draggable.create("#court", {
-      type: "x,y",
-      bounds: dragAreaRef.current,
-    });
-
-    Draggable.create("#writer", {
-      type: "x,y",
-      bounds: dragAreaRef.current,
-    });
-
-    Draggable.create("#javed", {
-      type: "x,y",
-      bounds: dragAreaRef.current,
-    });
 
     timeline.to("#hello", {
       opacity: 1,
@@ -83,7 +60,35 @@ export default function Hero() {
       stagger: 0.1,
       ease: "power2.out",
     });
-  }, []);
+  });
+
+  useGSAP(
+    () => {
+      // Setting up the draggable elements
+      Draggable.create("#sed", {
+        type: "x,y",
+        bounds: dragAreaRef.current,
+      });
+
+      Draggable.create("#court", {
+        type: "x,y",
+        bounds: dragAreaRef.current,
+      });
+
+      Draggable.create("#writer", {
+        type: "x,y",
+        bounds: dragAreaRef.current,
+      });
+
+      Draggable.create("#javed", {
+        type: "x,y",
+        bounds: dragAreaRef.current,
+      });
+    },
+    {
+      scope: dragAreaRef,
+    }
+  );
 
   return (
     <section className="container flex flex-col items-center pt-10 mx-auto h-screen">

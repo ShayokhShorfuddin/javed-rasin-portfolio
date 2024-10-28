@@ -6,7 +6,7 @@ import Loader from "./Loader";
 import Writer from "./Writer";
 
 export default function Page() {
-  const [loaderComplete, setLoaderComplete] = useState(false);
+  const [loaderComplete, setLoaderComplete] = useState(true);
 
   const handleComplete = () => {
     setLoaderComplete(true);
@@ -20,3 +20,6 @@ export default function Page() {
     </main>
   );
 }
+
+//TODO: First, fix the loader & hero issue.
+// TODO: Finish optimizing the suggested code
