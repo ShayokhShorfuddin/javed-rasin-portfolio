@@ -6,7 +6,7 @@ import Loader from "./Loader";
 import Writer from "./Writer";
 
 export default function Page() {
-  const [loaderComplete, setLoaderComplete] = useState(true);
+  const [loaderComplete, setLoaderComplete] = useState(false);
 
   const handleComplete = () => {
     setLoaderComplete(true);
@@ -15,8 +15,12 @@ export default function Page() {
   return (
     <main>
       <Loader onComplete={handleComplete} />
-      {loaderComplete && <Hero />}
-      <Writer />
+      {loaderComplete && (
+        <>
+          <Hero />
+          <Writer />
+        </>
+      )}
     </main>
   );
 }
