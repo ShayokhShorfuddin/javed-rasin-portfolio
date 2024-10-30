@@ -4,6 +4,7 @@ import { useState } from "react";
 import Hero from "./Hero";
 import Loader from "./Loader";
 import Writer from "./Writer";
+import Years from "./Years";
 
 export default function Page() {
   const [loaderComplete, setLoaderComplete] = useState(false);
@@ -19,11 +20,9 @@ export default function Page() {
         <>
           <Hero />
           <Writer />
+          <Years />
         </>
       )}
     </main>
   );
 }
-
-//TODO: First, fix the loader & hero issue.
-// TODO: Finish optimizing the suggested code
