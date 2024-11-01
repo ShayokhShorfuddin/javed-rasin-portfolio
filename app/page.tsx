@@ -5,6 +5,7 @@ import Hero from "./Hero";
 import Loader from "./Loader";
 import Writer from "./Writer";
 import Years from "./Years";
+import HorizontalBooks from "./HorizontalBooks";
 
 export default function Page() {
   const [loaderComplete, setLoaderComplete] = useState(false);
@@ -21,6 +22,7 @@ export default function Page() {
           <Hero />
           <Writer />
           <Years />
+          <HorizontalBooks />
           <div className="h-screen bg-blue-200"></div>
         </>
       )}
