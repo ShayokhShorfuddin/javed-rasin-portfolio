@@ -21,6 +21,7 @@ export default function Page() {
           <Hero />
           <Writer />
           <Years />
+          <div className="h-screen bg-blue-200"></div>
         </>
       )}
     </main>
