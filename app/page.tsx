@@ -8,7 +8,7 @@ import Years from "./Years";
 import HorizontalBooks from "./HorizontalBooks";
 
 export default function Page() {
-  const [loaderComplete, setLoaderComplete] = useState(false);
+  const [loaderComplete, setLoaderComplete] = useState(true);
 
   const handleComplete = () => {
     setLoaderComplete(true);
@@ -16,7 +16,7 @@ export default function Page() {
 
   return (
     <main>
-      <Loader onComplete={handleComplete} />
+      {/* <Loader onComplete={handleComplete} /> */}
       {loaderComplete && (
         <>
           <Hero />

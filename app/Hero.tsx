@@ -13,7 +13,6 @@ gsap.registerPlugin(Draggable);
 
 export default function Hero() {
   const handRef = useRef<HTMLSpanElement>(null);
-  const nameRef = useRef<HTMLHeadingElement>(null);
   const dragAreaRef = useRef<HTMLDivElement>(null);
 
   function pickDeg(): number {
@@ -49,6 +48,7 @@ export default function Hero() {
     // Name stagger animation
     timeline.from(".name-letter", {
       y: 200,
+
       stagger: 0.1,
       duration: 0.5,
       ease: "power2.out",
@@ -102,12 +102,9 @@ export default function Hero() {
         </span>
       </p>
 
-      <h1
-        className="text-[11.5vw] font-outfit self-center leading-none overflow-hidden"
-        ref={nameRef}
-      >
+      <h1 className="text-[11.5vw] font-outfit self-center leading-none overflow-hidden">
         {"JAVED RASIN".split("").map((letter, index) => (
-          <span key={index} className="name-letter inline-block">
+          <span className="name-letter inline-block" key={index}>
             {letter === " " ? "\u00A0" : letter}
           </span>
         ))}
