@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// TODO: Update filepaths
 // Thriller book covers
 import BisonnoProhor from "./images/books/thriller/Bisonno-Prohor.jpg";
 import MonerVidorKe from "./images/books/thriller/Moner-Vidor-Ke.jpg";

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import JavedImage from "./images/javed.jpg";
+import JavedImage from "./images/javed/javed.jpg";
 
 import gsap from "gsap";
 import { useRef } from "react";
