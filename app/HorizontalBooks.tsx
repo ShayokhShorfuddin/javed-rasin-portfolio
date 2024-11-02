@@ -1,6 +1,9 @@
-import gsap from "gsap";
-import Image, { StaticImageData } from "next/image";
+import { Orbit } from "next/font/google";
+
 import { useRef } from "react";
+import Image, { StaticImageData } from "next/image";
+
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -13,6 +16,15 @@ import MoreJayNokkhotrera from "./images/books/More-Jay-Nokkhotrera.jpeg";
 import BistritoAdhar from "./images/books/Bistrito-Adhar.jpeg";
 import Osua from "./images/books/Osua.jpeg";
 import Tomisra from "./images/books/Tomisra.jpeg";
+
+// Sci-fi books covers
+import SomoyerSiri from "./images/books/Somoyer-Siri.jpeg";
+import VoiceParisa from "./images/books/Voice-Parisa.jpg";
+
+const orbit = Orbit({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,17 +67,29 @@ export default function HorizontalBooks() {
 
   return (
     <div className="overflow-x-hidden h-screen" ref={parentDivRef}>
-      <div className="flex items-center h-full px-10" ref={contentRef}>
+      <div
+        className="flex items-center h-full pl-20 gap-x-[8rem]"
+        ref={contentRef}
+      >
         {/* Thriller Div */}
         <TextAndBooksDiv
-          text="Thriller"
+          text="Every page ignites a new thrill."
+          style={{ fontFamily: "sans" }}
           images={[BisonnoProhor, MonerVidorKe, MoreJayNokkhotrera]}
         />
 
         {/* <HorrorDiv /> */}
         <TextAndBooksDiv
-          text="Horror"
+          text="Face the horror that creeps beyond."
+          style={{ fontFamily: "DieDieDie" }}
           images={[BistritoAdhar, Tomisra, Osua]}
+        />
+
+        {/* Sci-fi Div */}
+        <TextAndBooksDiv
+          text="Traverse into distant future of possibilities"
+          style={{ fontFamily: orbit.style.fontFamily }}
+          images={[SomoyerSiri, VoiceParisa]}
         />
       </div>
     </div>
@@ -74,14 +98,18 @@ export default function HorizontalBooks() {
 
 function TextAndBooksDiv({
   text,
+  style,
   images,
 }: {
   text: string;
+  style: React.CSSProperties;
   images: StaticImageData[];
 }) {
   return (
-    <div className="flex items-center min-w-max">
-      <h1 className="text-4xl font-bold w-[30rem]">{text}</h1>
+    <div className="flex items-center min-w-max gap-x-10">
+      <h1 className={`text-4xl max-w-96`} style={{ ...style }}>
+        {text}
+      </h1>
 
       <div className="flex gap-8">
         {images.map((image, index) => (
@@ -97,6 +125,3 @@ function TextAndBooksDiv({
     </div>
   );
 }
-
-// TODO: Fix texts and its appearance
-// Fix color transition (might need to ask on forum)

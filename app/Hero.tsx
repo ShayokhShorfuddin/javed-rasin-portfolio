@@ -8,6 +8,13 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { Draggable } from "gsap/all";
 
+import { Outfit } from "next/font/google";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(Draggable);
 
@@ -91,8 +98,8 @@ export default function Hero() {
   );
 
   return (
-    <section className="container flex flex-col items-center pt-10 mx-auto h-screen">
-      <p className="text-2xl font-outfit mb-5 opacity-0" id="hello">
+    <section className="container flex flex-col items-center pt-10 mx-auto min-h-screen">
+      <p className={`text-2xl ${outfit.className} mb-5 opacity-0`} id="hello">
         Hello there{" "}
         <span
           ref={handRef}
@@ -102,7 +109,9 @@ export default function Hero() {
         </span>
       </p>
 
-      <h1 className="text-[11.5vw] font-outfit self-center leading-none overflow-hidden">
+      <h1
+        className={`text-[11vw] ${outfit.className} self-center leading-none overflow-hidden`}
+      >
         {"JAVED RASIN".split("").map((letter, index) => (
           <span className="name-letter inline-block" key={index}>
             {letter === " " ? "\u00A0" : letter}
@@ -110,7 +119,7 @@ export default function Hero() {
         ))}
       </h1>
 
-      <div className="w-full h-[50vh] mt-10 relative" ref={dragAreaRef}>
+      <div className="w-full h-[50vh] mt-12 relative" ref={dragAreaRef}>
         <div
           className="absolute size-[13vw] left-0 right-0 mx-auto top-5 opacity-0"
           id="javed"
@@ -155,7 +164,7 @@ function TextBox({
 }) {
   return (
     <div
-      className={`p-2 h-min w-fit text-xl font-outfit rounded-md absolute cursor-grab ${className}`}
+      className={`p-2 h-min w-fit text-xl rounded-md absolute cursor-grab ${className}`}
       style={{
         transform: `rotate(${deg}deg)`,
       }}
