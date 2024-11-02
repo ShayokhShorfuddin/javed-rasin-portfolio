@@ -22,8 +22,8 @@ export default function HorizontalBooks() {
 
   function getScrollAmount() {
     if (contentRef.current) {
-      let racesWidth = contentRef.current.scrollWidth;
-      return -(racesWidth - window.innerWidth);
+      let contentWidth = contentRef.current.scrollWidth + 100; // 100 for extra space at the end
+      return -(contentWidth - window.innerWidth);
     }
 
     // Due to the ref checking above, had to return 0 to avoid TS error.
@@ -44,7 +44,7 @@ export default function HorizontalBooks() {
       start: "top 0%",
       end: () => `+=${getScrollAmount() * -1}`,
 
-      scrub: 1,
+      scrub: 1.5,
       pin: true,
       animation: ScrollTween,
 
@@ -55,7 +55,7 @@ export default function HorizontalBooks() {
 
   return (
     <div className="overflow-x-hidden h-screen" ref={parentDivRef}>
-      <div className="flex items-center h-full" ref={contentRef}>
+      <div className="flex items-center h-full px-10" ref={contentRef}>
         {/* Thriller Div */}
         <TextAndBooksDiv
           text="Thriller"
