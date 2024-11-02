@@ -42,7 +42,6 @@ export default function HorizontalBooks() {
     <div className="overflow-x-hidden h-screen" ref={parentDiv}>
       <div className="flex items-center h-full" ref={contentRef}>
         {/* Thriller Div */}
-
         <TextAndBooksDiv
           text="Thriller"
           images={[BisonnoProhor, MonerVidorKe, MoreJayNokkhotrera]}
@@ -83,3 +82,6 @@ function TextAndBooksDiv({
     </div>
   );
 }
+
+// TODO: Fix texts and its appearance
+// Fix color transition (might need to ask on forum)

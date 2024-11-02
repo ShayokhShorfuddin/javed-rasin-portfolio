@@ -23,7 +23,7 @@ export default function Page() {
           <Writer />
           <Years />
           <HorizontalBooks />
-          <div className="h-screen bg-blue-200"></div>
+          <div className="h-screen bg-blue-200">Just a blank page for now</div>
         </>
       )}
     </main>
