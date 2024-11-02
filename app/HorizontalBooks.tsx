@@ -4,43 +4,57 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// TODO: Update filepaths
 // Thriller book covers
-import BisonnoProhor from "./images/books/thriller/Bisonno-Prohor.jpg";
-import MonerVidorKe from "./images/books/thriller/Moner-Vidor-Ke.jpg";
-import MoreJayNokkhotrera from "./images/books/thriller/More-Jay-Nokkhotrera.jpg";
+import BisonnoProhor from "./images/books/Bisonno-Prohor.jpeg";
+import MonerVidorKe from "./images/books/Moner-Vidor-Ke.jpeg";
+import MoreJayNokkhotrera from "./images/books/More-Jay-Nokkhotrera.jpeg";
 
 // Horror books covers
-import BistritoAdhar from "./images/books/horror/Bistrito-Adhar.jpg";
-import Osua from "./images/books/horror/Osua.jpg";
-import Tomisra from "./images/books/horror/Tomisra.jpg";
+import BistritoAdhar from "./images/books/Bistrito-Adhar.jpeg";
+import Osua from "./images/books/Osua.jpeg";
+import Tomisra from "./images/books/Tomisra.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HorizontalBooks() {
-  const contentRef = useRef<HTMLHeadingElement>(null);
-  const parentDiv = useRef<HTMLDivElement>(null); // Necessary for pin to work
+  const contentRef = useRef<HTMLDivElement>(null);
+  const parentDivRef = useRef<HTMLDivElement>(null); // Necessary for pin to work
+
+  function getScrollAmount() {
+    if (contentRef.current) {
+      let racesWidth = contentRef.current.scrollWidth;
+      return -(racesWidth - window.innerWidth);
+    }
+
+    // Due to the ref checking above, had to return 0 to avoid TS error.
+    return 0;
+  }
 
   useGSAP(() => {
-    gsap.to(contentRef.current, {
-      transform: "translateX(-110%)", // TODO: Fixed values gets you killed when screen size changes. Go understand the responsive approach.
+    const ScrollTween = gsap.to(contentRef.current, {
+      x: getScrollAmount,
+      duration: 3,
+      ease: "none",
+    });
 
-      scrollTrigger: {
-        trigger: parentDiv.current,
-        scroller: "body",
-        markers: true,
+    ScrollTrigger.create({
+      trigger: parentDivRef.current,
+      scroller: "body",
 
-        start: "top 0%",
-        end: "top -450%",
+      start: "top 0%",
+      end: () => `+=${getScrollAmount() * -1}`,
 
-        scrub: 1,
-        pin: true,
-      },
+      scrub: 1,
+      pin: true,
+      animation: ScrollTween,
+
+      markers: true,
+      invalidateOnRefresh: true,
     });
   });
 
   return (
-    <div className="overflow-x-hidden h-screen" ref={parentDiv}>
+    <div className="overflow-x-hidden h-screen" ref={parentDivRef}>
       <div className="flex items-center h-full" ref={contentRef}>
         {/* Thriller Div */}
         <TextAndBooksDiv
@@ -51,7 +65,7 @@ export default function HorizontalBooks() {
         {/* <HorrorDiv /> */}
         <TextAndBooksDiv
           text="Horror"
-          images={[BistritoAdhar, Osua, Tomisra]}
+          images={[BistritoAdhar, Tomisra, Osua]}
         />
       </div>
     </div>
