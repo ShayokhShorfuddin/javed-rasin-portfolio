@@ -21,8 +21,8 @@ export default function Page() {
         <>
           <Hero />
           <Writer />
-          <Years />
           <HorizontalBooks />
+          <Years />
           <div className="h-screen bg-blue-200">Just a blank page for now</div>
         </>
       )}
