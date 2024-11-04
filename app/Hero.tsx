@@ -28,7 +28,7 @@ export default function Hero() {
 
   // Generating random degrees for each element
   const sedDeg = pickDeg();
-  const courtDeg = pickDeg();
+  const courtDeg = -sedDeg;
   const writerDeg = pickDeg();
 
   useGSAP(() => {
