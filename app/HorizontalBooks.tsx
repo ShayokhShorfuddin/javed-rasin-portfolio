@@ -60,7 +60,6 @@ export default function HorizontalBooks() {
       pin: true,
       animation: ScrollTween,
 
-      markers: true,
       invalidateOnRefresh: true,
     });
   });

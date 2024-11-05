@@ -8,7 +8,18 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { Draggable } from "gsap/all";
 
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
 import { Outfit } from "next/font/google";
+import { Menu } from "lucide-react";
+import Link from "next/link";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -99,6 +110,7 @@ export default function Hero() {
 
   return (
     <section className="container flex flex-col items-center pt-10 mx-auto min-h-screen">
+      <Sidebar />
       <p className={`text-2xl ${outfit.className} mb-5 opacity-0`} id="hello">
         Hello there{" "}
         <span
@@ -172,5 +184,27 @@ function TextBox({
     >
       <p>{sentence}</p>
     </div>
+  );
+}
+
+// Sidebar
+function Sidebar() {
+  return (
+    <Sheet>
+      <SheetTrigger className="absolute top-8 right-10">
+        <Menu />
+      </SheetTrigger>
+
+      <SheetContent>
+        <div className="flex flex-col gap-y-2 mx-5">
+          <Link href="/blogs">Blogs</Link>
+          <Link href="/books">Books</Link>
+          <Link href="/social-legal-works">Social & Legal Works</Link>
+          <Link href="/about">About</Link>
+          <Link href="/uploads">Uploads</Link>
+          <Link href="/contact">Contact</Link>
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 }
