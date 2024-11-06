@@ -14,7 +14,7 @@ import MoreJayNokkhotrera from "./images/books/More-Jay-Nokkhotrera.jpeg";
 
 // Horror books covers
 import BistritoAdhar from "./images/books/Bistrito-Adhar.jpeg";
-import Osua from "./images/books/Osua.jpeg";
+import Binti from "./images/books/Binti.jpg";
 import Tomisra from "./images/books/Tomisra.jpeg";
 
 // Sci-fi books covers
@@ -81,7 +81,7 @@ export default function HorizontalBooks() {
         <TextAndBooksDiv
           text="Face the horror that creeps beyond."
           style={{ fontFamily: "DieDieDie" }}
-          images={[BistritoAdhar, Tomisra, Osua]}
+          images={[BistritoAdhar, Tomisra, Binti]}
         />
 
         {/* Sci-fi Div */}

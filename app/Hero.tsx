@@ -9,6 +9,18 @@ import { useGSAP } from "@gsap/react";
 import { Draggable } from "gsap/all";
 
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+
+import {
   Sheet,
   SheetContent,
   SheetDescription,
@@ -18,7 +30,7 @@ import {
 } from "@/components/ui/sheet";
 
 import { Outfit } from "next/font/google";
-import { Menu } from "lucide-react";
+import { Mail, MapPin, Menu, Phone } from "lucide-react";
 import Link from "next/link";
 
 const outfit = Outfit({
@@ -199,12 +211,76 @@ function Sidebar() {
         <div className="flex flex-col gap-y-2 mx-5">
           <Link href="/blogs">Blogs</Link>
           <Link href="/books">Books</Link>
-          <Link href="/social-legal-works">Social & Legal Works</Link>
           <Link href="/about">About</Link>
           <Link href="/uploads">Uploads</Link>
-          <Link href="/contact">Contact</Link>
+
+          <AlertDialog>
+            <AlertDialogTrigger>
+              <p className="text-left">Contact</p>
+            </AlertDialogTrigger>
+
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Contact</AlertDialogTitle>
+                <AlertDialogDescription>
+                  Let's get in touch.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+
+              <div className="flex flex-col gap-y-5 text-neutral-800">
+                <ContactPhone />
+                <ContactEmail />
+                <ContactAddress />
+              </div>
+
+              {/* TODO: Add contact details*/}
+              <AlertDialogFooter>
+                <AlertDialogCancel>Close</AlertDialogCancel>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+
+          <Link href="/social-legal-works">Social & Legal Works</Link>
         </div>
       </SheetContent>
     </Sheet>
+  );
+}
+
+function ContactPhone() {
+  return (
+    <div className="flex">
+      <Phone className="mr-4" />
+      <p>+8801553657919</p>
+    </div>
+  );
+}
+
+function ContactEmail() {
+  return (
+    <div className="flex">
+      <Mail className="mr-4" />
+      <p>
+        <Link href="mailto:javed.rasin@gmail.com" className="hover:underline">
+          javed.rasin@gmail.com
+        </Link>
+      </p>
+    </div>
+  );
+}
+
+function ContactAddress() {
+  return (
+    <div className="flex">
+      <MapPin className="mr-4" />
+
+      <Link
+        href="https://maps.app.goo.gl/4G3GuXeUcgA7P1BR8"
+        className="hover:underline"
+        target="_blank"
+      >
+        Iha Prokash, 803/A, Khilgaon Tilpapara, Road 14, Dhaka-1219.
+      </Link>
+    </div>
   );
 }
