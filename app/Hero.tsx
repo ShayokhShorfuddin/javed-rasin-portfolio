@@ -98,21 +98,25 @@ export default function Hero() {
       Draggable.create("#sed", {
         type: "x,y",
         bounds: dragAreaRef.current,
+        zIndexBoost: false,
       });
 
       Draggable.create("#court", {
         type: "x,y",
         bounds: dragAreaRef.current,
+        zIndexBoost: false,
       });
 
       Draggable.create("#writer", {
         type: "x,y",
         bounds: dragAreaRef.current,
+        zIndexBoost: false,
       });
 
       Draggable.create("#javed", {
         type: "x,y",
         bounds: dragAreaRef.current,
+        zIndexBoost: false,
       });
     },
     {
