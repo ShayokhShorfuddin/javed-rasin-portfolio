@@ -7,6 +7,7 @@ import Writer from "./Writer";
 import Years from "./Years";
 import HorizontalBooks from "./HorizontalBooks";
 import LawText from "./LawText";
+import Gallery from "./Gallery";
 
 export default function Page() {
   const [loaderComplete, setLoaderComplete] = useState(true);
@@ -25,7 +26,7 @@ export default function Page() {
           <HorizontalBooks />
           <Years />
           <LawText />
-          <div className="h-svh">Hello World</div>
+          <Gallery />
         </>
       )}
     </main>

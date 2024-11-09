@@ -47,10 +47,10 @@ export default function LawText() {
 
     // Animate opacity of each word
     timeline.from(".law-letter", {
-      opacity: 0,
-      duration: 2,
+      opacity: 0.04,
+      duration: 5,
       stagger: 1,
-      ease: "power2.out",
+      ease: "power3.out",
 
       scrollTrigger: {
         trigger: textRef.current,
