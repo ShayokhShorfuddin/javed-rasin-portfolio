@@ -6,6 +6,7 @@ import Loader from "./Loader";
 import Writer from "./Writer";
 import Years from "./Years";
 import HorizontalBooks from "./HorizontalBooks";
+import LawText from "./LawText";
 
 export default function Page() {
   const [loaderComplete, setLoaderComplete] = useState(true);
@@ -23,7 +24,7 @@ export default function Page() {
           <Writer />
           <HorizontalBooks />
           <Years />
-          <div className="h-screen bg-blue-200">Just a blank page for now</div>
+          <LawText />
         </>
       )}
     </main>
