@@ -18,7 +18,7 @@ import Javed10 from "./images/javed/Javed10.jpeg";
 import Javed11 from "./images/javed/Javed11.jpeg";
 import Javed12 from "./images/javed/Javed12.jpeg";
 import Javed13 from "./images/javed/Javed13.jpeg";
-import Javed14 from "./images/javed/javed14.jpeg";
+import Javed14 from "./images/javed/Javed14.jpeg";
 
 const outfit = Outfit({
   subsets: ["latin"],
