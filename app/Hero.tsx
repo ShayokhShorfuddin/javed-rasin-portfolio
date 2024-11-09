@@ -229,7 +229,6 @@ function Sidebar() {
                 <ContactAddress />
               </div>
 
-              {/* TODO: Add contact details*/}
               <AlertDialogFooter>
                 <AlertDialogCancel>Close</AlertDialogCancel>
               </AlertDialogFooter>
