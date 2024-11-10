@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 const config = {
   darkMode: ["class"],
@@ -10,6 +11,7 @@ const config = {
   ],
   prefix: "",
   theme: {
+    screens: { xs: "475px", ...defaultTheme.screens },
     extend: {
       colors: {
         border: "hsl(var(--border))",

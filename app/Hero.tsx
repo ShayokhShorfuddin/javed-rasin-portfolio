@@ -27,7 +27,7 @@ import Link from "next/link";
 
 const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["200", "300", "400"],
 });
 
 gsap.registerPlugin(useGSAP);
@@ -119,18 +119,21 @@ export default function Hero() {
   return (
     <section className="container flex flex-col items-center pt-10 mx-auto min-h-screen">
       <Sidebar />
-      <p className={`text-2xl ${outfit.className} mb-5 opacity-0`} id="hello">
+      <p
+        className={`text-lg md:text-2xl mb-2 lg:mb-5 opacity-0 font-extralight md:font-light ${outfit.className}`}
+        id="hello"
+      >
         Hello there{" "}
         <span
+          className="hidden md:inline-block origin-bottom-right"
           ref={handRef}
-          style={{ display: "inline-block", transformOrigin: "bottom right" }}
         >
           👋🏻
         </span>
       </p>
 
       <h1
-        className={`text-[11vw] ${outfit.className} self-center leading-none overflow-hidden`}
+        className={`text-[11vw] self-center leading-none overflow-hidden ${outfit.className}`}
       >
         {"JAVED RASIN".split("").map((letter, index) => (
           <span className="name-letter inline-block" key={index}>
@@ -139,29 +142,32 @@ export default function Hero() {
         ))}
       </h1>
 
-      <div className="w-full h-[50vh] mt-12 relative" ref={dragAreaRef}>
+      <div
+        className="w-full h-[40rem] md:h-[35rem] lg:h-[32rem] xl:h-[29rem] mt-9 lg:mt-12 relative"
+        ref={dragAreaRef}
+      >
         <div
-          className="absolute size-[13vw] left-0 right-0 mx-auto top-5 opacity-0"
+          className="absolute size-[55vw] sm:size-[15rem] lg:size-[17rem] left-0 right-0 mx-auto top-5 opacity-0"
           id="javed"
         >
           <Image src={JavedImage} alt="Javed" className="rounded-full" />
         </div>
 
         <TextBox
-          className={`bg-green-300 left-0 opacity-0`}
+          className={`bg-green-300 bottom-52 lg:top-0 lg:left-0 opacity-0`}
           sentence="Founder & CEO at SED Foundation 🌿"
           id="sed"
           deg={sedDeg}
         />
 
         <TextBox
-          className={`bg-purple-200 right-0 opacity-0`}
+          className={`bg-purple-200 bottom-40 lg:top-0 right-0 opacity-0`}
           sentence="Advocate at Supreme Court of Bangladesh ⚖️"
           id="court"
           deg={courtDeg}
         />
         <TextBox
-          className={`bg-orange-200 bottom-0 left-1/3 opacity-0`}
+          className={`bg-orange-200 bottom-16 lg:bottom-0 left-[25%] md:left-[35%] opacity-0`}
           sentence="Writer, Editor & Publisher at ঈহা প্রকাশ ✒️"
           id="writer"
           deg={writerDeg}
@@ -184,7 +190,7 @@ function TextBox({
 }) {
   return (
     <div
-      className={`p-2 h-min w-fit text-xl rounded-md absolute cursor-grab ${className}`}
+      className={`p-2 h-min w-fit text-base md:text-xl rounded-md absolute cursor-grab ${className}`}
       style={{
         transform: `rotate(${deg}deg)`,
       }}
@@ -199,8 +205,8 @@ function TextBox({
 function Sidebar() {
   return (
     <Sheet>
-      <SheetTrigger className="absolute top-8 right-10">
-        <Menu />
+      <SheetTrigger className="absolute top-5 right-7 md:top-8 md:right-10">
+        <Menu className="w-5 h-5 md:w-6 md:h-6" />
       </SheetTrigger>
 
       <SheetContent>

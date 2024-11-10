@@ -35,10 +35,11 @@ export default function LawText() {
     // Animate background color change
     timeline.to(divRef.current, {
       backgroundColor: "#09090b",
-      duration: 1,
+      duration: 2,
 
       scrollTrigger: {
         trigger: sectionRef.current,
+        scroller: "body",
         start: "top 80%",
         end: "top top",
         markers: true,
