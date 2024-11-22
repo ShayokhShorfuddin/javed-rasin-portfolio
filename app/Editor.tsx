@@ -47,13 +47,13 @@ export default function Editor() {
 
   return (
     <div className="w-full">
-      <div className="flex flex-col mx-auto w-[70vw]">
-        <h1 className="mt-5 text-4xl text-center">
+      <div className="flex flex-col mx-auto w-[80vw] sm:w-[70vw]">
+        <h1 className="mt-5 text-xl md:text-2xl text-center">
           From A Writer To Storyteller.
         </h1>
 
-        <p className="mt-10 text-justify">
-          <span id="content-span"></span>
+        <p className="mt-7 md:text-justify">
+          <span id="content-span" className="text-sm md:text-base"></span>
           <span
             className="inline-block w-[0.5px] h-5 bg-black align-middle"
             id="custom-cursor"

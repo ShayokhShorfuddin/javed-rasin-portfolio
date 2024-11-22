@@ -190,7 +190,7 @@ function TextBox({
 }) {
   return (
     <div
-      className={`p-2 h-min w-fit text-base md:text-xl rounded-md absolute cursor-grab ${className}`}
+      className={`p-2 mx-1 h-min w-fit text-base md:text-xl rounded-md absolute cursor-grab ${className}`}
       style={{
         transform: `rotate(${deg}deg)`,
       }}

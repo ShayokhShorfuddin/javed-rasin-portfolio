@@ -53,23 +53,23 @@ export default function BlueRibbon() {
         <p className="hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
           Design
         </p>
-        <p className="hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
+        <p className="hidden xs:block hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
           Layout
         </p>
-        <p className="hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
+        <p className="hidden sm:block hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
           References
         </p>
-        <p className="hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
+        <p className="hidden sm:block hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
           Mailings
         </p>
-        <p className="hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
+        <p className="hidden md:block hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
           Review
         </p>
-        <p className="hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
+        <p className="hidden md:block hover:bg-[#6699ff] px-4 py-1 text-sm text-gray-100">
           View
         </p>
 
-        <div className="flex hover:bg-[#6699ff] px-2 py-1 text-sm text-gray-100">
+        <div className="hidden lg:flex hover:bg-[#6699ff] px-2 py-1 text-sm text-gray-100">
           <Lightbulb stroke="white" strokeWidth={1.5} className="p-1" />
           <p>Tell me what you want to do...</p>
         </div>
