@@ -32,20 +32,6 @@ export default function LawText() {
   useGSAP(() => {
     const timeline = gsap.timeline();
 
-    // Animate background color change
-    timeline.to(divRef.current, {
-      backgroundColor: "#09090b",
-      duration: 2,
-
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        scroller: "body",
-        start: "top 80%",
-        end: "top top",
-        markers: true,
-      },
-    });
-
     // Animate opacity of each word
     timeline.from(".law-letter", {
       opacity: 0.04,
@@ -63,40 +49,10 @@ export default function LawText() {
     });
   });
 
-  // useGSAP(() => {
-  //   const timeline = gsap.timeline();
-
-  //   timeline
-  //     .to(divRef.current, {
-  //       backgroundColor: "#09090b",
-  //       duration: 1,
-
-  //       scrollTrigger: {
-  //         trigger: sectionRef.current,
-  //         start: "top 80%", // Changed to trigger at center of viewport
-  //         end: "top top",
-  //         markers: true,
-  //       },
-  //     })
-  //     .from(".law-letter", {
-  //       opacity: 0.05,
-  //       duration: 0.7,
-  //       stagger: 0.5,
-  //       ease: "power2.out",
-
-  //       scrollTrigger: {
-  //         trigger: textRef.current,
-  //         markers: true,
-  //         pin: true,
-  //         scrub: 1,
-  //       },
-  //     });
-  // });
-
   return (
     <section className="h-svh" ref={sectionRef}>
       <div
-        className="flex justify-center items-center h-full bg-white"
+        className="flex justify-center items-center h-full bg-zinc-950"
         ref={divRef}
       >
         <h1
