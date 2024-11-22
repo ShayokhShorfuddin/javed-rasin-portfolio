@@ -52,7 +52,7 @@ export default function Editor() {
           From A Writer To Storyteller.
         </h1>
 
-        <p className="mt-7 md:text-justify">
+        <p className="mt-7 md:text-justify mb-2">
           <span id="content-span" className="text-sm md:text-base"></span>
           <span
             className="inline-block w-[0.5px] h-5 bg-black align-middle"

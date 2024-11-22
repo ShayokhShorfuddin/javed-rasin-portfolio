@@ -23,7 +23,9 @@ export default function Page() {
         <>
           <Hero />
           <Writer />
-          <HorizontalBooks />
+          <div className="hidden md:block">
+            <HorizontalBooks />
+          </div>
           <Years />
           <LawText />
           <Gallery />
