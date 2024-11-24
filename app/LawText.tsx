@@ -43,7 +43,6 @@ export default function LawText() {
         trigger: textRef.current,
         start: "top bottom",
         end: "top top",
-        markers: true,
         scrub: 1,
       },
     });

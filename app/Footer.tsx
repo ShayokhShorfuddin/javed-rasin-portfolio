@@ -39,7 +39,6 @@ export default function Footer() {
         trigger: "#hr-line",
         start: "top bottom",
         toggleActions: "restart none none none",
-        markers: true,
       },
     })
   );
