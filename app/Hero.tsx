@@ -248,7 +248,7 @@ function Sidebar() {
   );
 }
 
-function ContactPhone() {
+export function ContactPhone() {
   return (
     <div className="flex">
       <Phone className="mr-4" />
@@ -257,7 +257,7 @@ function ContactPhone() {
   );
 }
 
-function ContactEmail() {
+export function ContactEmail() {
   return (
     <div className="flex">
       <Mail className="mr-4" />
@@ -270,7 +270,7 @@ function ContactEmail() {
   );
 }
 
-function ContactAddress() {
+export function ContactAddress() {
   return (
     <div className="flex">
       <MapPin className="mr-4" />

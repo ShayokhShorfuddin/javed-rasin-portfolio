@@ -13,6 +13,9 @@ const config = {
   theme: {
     screens: { xs: "475px", ...defaultTheme.screens },
     extend: {
+      fontFamily: {
+        nb: ["NB", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

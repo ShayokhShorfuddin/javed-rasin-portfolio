@@ -7,6 +7,10 @@
     font-family: "DieDieDie";
     src: url("./fonts/DIEDIEDI.TTF") format("truetype");
   }
+  @font-face {
+    font-family: "NB";
+    src: url("./fonts/NBInternationalProBoo.ttf") format("truetype");
+  }
 
   :root {
     --background: 0 0% 100%;

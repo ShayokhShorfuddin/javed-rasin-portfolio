@@ -8,6 +8,7 @@ import Years from "./Years";
 import HorizontalBooks from "./HorizontalBooks";
 import LawText from "./LawText";
 import Gallery from "./Gallery";
+import Footer from "./Footer";
 
 export default function Page() {
   const [loaderComplete, setLoaderComplete] = useState(false);
@@ -28,7 +29,8 @@ export default function Page() {
           </div>
           <Years />
           <LawText />
-          <Gallery />
+          {/* <Gallery /> */}
+          <Footer />
         </>
       )}
     </main>

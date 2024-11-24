@@ -38,7 +38,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
 
   return (
     <div
-      className="flex justify-center items-center h-full w-full fixed top-0 z-30 bg-black text-white font-nb"
+      className="flex justify-center items-center h-full w-full fixed top-0 z-30 bg-black text-white"
       id="loader"
       ref={loaderRef}
     >
@@ -46,7 +46,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
         <h1
           key={index}
           id={`text-${index}`}
-          className="text-xl md:text-2xl lg:text-3xl font-mono opacity-0 hidden"
+          className="text-xl md:text-2xl lg:text-3xl font-nb opacity-0 hidden"
         >
           {sentence}
         </h1>
