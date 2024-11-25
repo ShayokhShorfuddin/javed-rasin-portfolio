@@ -133,7 +133,7 @@ export default function Hero() {
       </p>
 
       <h1
-        className={`text-[11vw] self-center leading-none overflow-hidden ${outfit.className}`}
+        className={`text-[11vw] self-center leading-none overflow-hidden text-nowrap ${outfit.className}`}
       >
         {"JAVED RASIN".split("").map((letter, index) => (
           <span className="name-letter inline-block" key={index}>
