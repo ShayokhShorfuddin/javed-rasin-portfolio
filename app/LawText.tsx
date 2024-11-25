@@ -55,13 +55,16 @@ export default function LawText() {
         ref={divRef}
       >
         <h1
-          className={`before:content-["Law"] before:text-sm before:md:text-base before:border before:rounded-full before:px-3 before:py-[.5px] before:mr-3 text-2xl md:text-3xl lg:text-5xl xl:text-6xl leading-tight md:max-w-[80vw] lg:max-w-[80vw] xl:max-w-[60vw] px-7 text-white text-center overflow-hidden ${libre.className}`}
+          className={`before:content-["Law"] before:text-sm before:md:text-base before:border before:rounded-full before:px-3 before:py-[.5px] before:mr-3 text-2xl md:text-3xl lg:text-5xl xl:text-6xl md:max-w-[80vw] lg:max-w-[80vw] xl:max-w-[60vw] px-7 text-white text-center overflow-hidden ${libre.className}`}
           ref={textRef}
         >
           {splitSentence(
             "The people are not just abstract numbers or cases, but individuals with real hopes, fears, and struggles."
           ).map((letter, index) => (
-            <span className="law-letter inline-block" key={index}>
+            <span
+              className="law-letter inline-block leading-[1.15]"
+              key={index}
+            >
               {letter === " " ? "\u00A0" : letter}
             </span>
           ))}

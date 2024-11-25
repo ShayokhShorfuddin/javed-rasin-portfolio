@@ -117,7 +117,7 @@ export default function Hero() {
   );
 
   return (
-    <section className="container flex flex-col items-center pt-10 mx-auto min-h-screen">
+    <section className="container flex flex-col items-center pt-10 mx-auto min-h-svh">
       <Sidebar />
       <p
         className={`text-lg md:text-2xl mb-2 lg:mb-5 opacity-0 font-extralight md:font-light ${outfit.className}`}

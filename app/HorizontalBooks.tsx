@@ -65,7 +65,7 @@ export default function HorizontalBooks() {
   });
 
   return (
-    <div className="overflow-x-hidden h-screen bg-white" ref={parentDivRef}>
+    <div className="overflow-x-hidden h-svh bg-white" ref={parentDivRef}>
       <div
         className="flex items-center h-full pl-20 gap-x-[8rem]"
         ref={contentRef}
