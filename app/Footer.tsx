@@ -74,26 +74,28 @@ export default function Footer() {
 
   return (
     <section className="flex flex-col justify-center items-center h-svh bg-[#1C1D20]">
-      <div className="flex flex-col justify-center text-gray-100">
-        <span className="inline-flex items-center">
+      <div className="flex flex-col justify-center text-gray-100 px-5">
+        <span className="inline-flex flex-col md:flex-row items-center gap-5">
           <Image
             src={Javed}
             alt="Javed"
-            className="size-24 mr-8 rounded-full hover:scale-110 transition-all duration-300"
+            className="size-24 rounded-full hover:scale-110 transition-all duration-300"
           />
 
-          <h1 className={`text-8xl  ${outfit.className}`}>
+          <h1
+            className={`text-4xl md:text-6xl text-center ${outfit.className}`}
+          >
             Let's work together.
           </h1>
         </span>
 
-        <hr className="w-[0%] border-[#ffffff33] mt-16" id="hr-line" />
+        <hr className="w-[0%] border-[#ffffff33] mt-10 md:mt-14" id="hr-line" />
 
         <div className="flex justify-between items-start mt-5">
           <div className="flex flex-col">
             <p className="text-stone-400 text-sm">Local Time</p>
             <h1 className="text-xl">
-              {time} <span className="text-sm text-stone-400">GMT+6</span>
+              {time} <span className="text-xl text-stone-400">GMT+6</span>
             </h1>
           </div>
 

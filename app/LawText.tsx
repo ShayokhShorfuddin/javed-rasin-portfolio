@@ -55,7 +55,7 @@ export default function LawText() {
         ref={divRef}
       >
         <h1
-          className={`before:content-["Law"] before:text-sm before:md:text-base before:border before:rounded-full before:px-3 before:py-[.5px] before:mr-3 text-2xl md:text-3xl lg:text-6xl leading-tight text-white max-w-[60vw] text-center overflow-hidden ${libre.className}`}
+          className={`before:content-["Law"] before:text-sm before:md:text-base before:border before:rounded-full before:px-3 before:py-[.5px] before:mr-3 text-2xl md:text-3xl lg:text-5xl xl:text-6xl leading-tight md:max-w-[80vw] lg:max-w-[80vw] xl:max-w-[60vw] px-7 text-white text-center overflow-hidden ${libre.className}`}
           ref={textRef}
         >
           {splitSentence(
