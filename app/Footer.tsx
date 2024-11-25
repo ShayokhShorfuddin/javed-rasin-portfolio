@@ -95,7 +95,7 @@ export default function Footer() {
           <div className="flex flex-col">
             <p className="text-stone-400 text-sm">Local Time</p>
             <h1 className="text-xl">
-              {time} <span className="text-xl text-stone-400">GMT+6</span>
+              {time} <span className="text-sm text-stone-400">GMT+6</span>
             </h1>
           </div>
 
