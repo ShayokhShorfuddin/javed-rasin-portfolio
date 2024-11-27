@@ -86,7 +86,7 @@ export default function HorizontalBooks() {
 
         {/* Sci-fi Div */}
         <TextAndBooksDiv
-          text="Traverse into distant future of possibilities"
+          text="Traverse into distant future of possibilities."
           style={{ fontFamily: orbit.style.fontFamily }}
           images={[SomoyerSiri, VoiceParisa]}
         />
