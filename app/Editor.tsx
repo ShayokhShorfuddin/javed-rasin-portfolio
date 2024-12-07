@@ -30,7 +30,7 @@ export default function Editor() {
           value: content,
         },
 
-        duration: 250,
+        duration: 230,
         ease: "none",
       })
       .to("#custom-cursor", {
