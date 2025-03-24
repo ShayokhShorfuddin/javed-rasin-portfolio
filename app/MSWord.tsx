@@ -177,10 +177,12 @@ function TextEditor() {
 	return (
 		<div className="flex flex-col mx-auto pt-[3rem] gap-y-6 max-w-[60rem] pb-[5rem]">
 			{/* Heading */}
-			<p className="text-2xl text-center">From A Writer To Storyteller</p>
+			<p className="text-2xl text-center select-none">
+				From A Writer To Storyteller
+			</p>
 
 			{/* Backstory of Javed Rasin */}
-			<p className="md:text-justify">
+			<p className="md:text-justify select-none">
 				{/* Text content */}
 				<span className="" id="text-content" />
 				{/* Custom cursor flicker */}
