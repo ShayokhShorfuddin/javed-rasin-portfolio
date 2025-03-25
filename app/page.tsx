@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import MicrosoftWord from "./MSWord";
 
 export default function Page() {
@@ -6,6 +7,8 @@ export default function Page() {
 			<main>
 				<MicrosoftWord />
 			</main>
+
+			<Footer />
 		</>
 	);
 }
