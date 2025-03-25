@@ -83,7 +83,7 @@ export default function Footer() {
 					/>
 
 					<p
-						className={`text-4xl md:text-6xl text-center text-white ${outfit.className}`}
+						className={`text-4xl md:text-6xl text-center text-white select-none ${outfit.className}`}
 					>
 						Let's work together.
 					</p>
@@ -103,7 +103,7 @@ export default function Footer() {
 
 					<AlertDialog>
 						<AlertDialogTrigger className="hover:cursor-pointer">
-							<p className="text-stone-400">Contact</p>
+							<p className="text-stone-400 select-none">Contact</p>
 						</AlertDialogTrigger>
 
 						<AlertDialogContent>
