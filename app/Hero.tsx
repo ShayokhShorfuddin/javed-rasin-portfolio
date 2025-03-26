@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Javed7 from "@/public/Javed7.jpeg";
+import Pointer from "@/public/pointer.svg";
 import JavedRasinHerotext from "@/public/javed-rasin-hero-text.svg";
 
 export default function Hero() {
@@ -25,12 +26,28 @@ export default function Hero() {
 					// No alt because its a decorative text svg
 				/>
 
-				<p className="text-stone-400 max-w-[30rem] text-center mt-4">
+				<p className="text-stone-400 max-w-[30rem] text-center mt-4 select-none">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 					eiusmod tempor incididunt ut labore et dolore magna aliqua.
 				</p>
 
 				{/* Pointers */}
+				<div className="absolute left-10 top-0">
+					<div className="relative">
+						<p className="text-sm text-stone-400 -rotate-3 select-none">
+							Founder & CEO,
+							<br />
+							The SED Foundation.
+						</p>
+
+						<Image
+							src={Pointer}
+							alt=""
+							priority
+							className="absolute -right-5 -bottom-8 w-23 rotate-4"
+						/>
+					</div>
+				</div>
 			</div>
 		</section>
 	);
