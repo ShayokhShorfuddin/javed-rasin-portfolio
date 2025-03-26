@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Javed from "@/public/javed.jpg";
-import JavedRasinText from "@/public/javed-rasin-text.svg";
+import JavedRasinText from "@/public/javed-rasin-footer-text.svg";
 import { Outfit } from "next/font/google";
 import { useState, useEffect, useCallback } from "react";
 
