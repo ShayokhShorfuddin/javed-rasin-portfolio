@@ -123,7 +123,7 @@ export default function Hero() {
 							src={Pointer}
 							alt=""
 							priority
-							className="absolute right-0 -bottom-8 w-20 rotate-4"
+							className="absolute -right-3 -bottom-8 w-20 rotate-4"
 						/>
 					</div>
 				</div>
