@@ -85,11 +85,6 @@ function MobileNavbarDropdown() {
 					</Link>
 				</li>
 				<li>
-					<Link href="/contact">
-						<p className="text-sm text-nowrap">Contact</p>
-					</Link>
-				</li>
-				<li>
 					<Link href="/social-and-legal-works">
 						<p className="text-sm text-nowrap">Social & Legal Works</p>
 					</Link>
