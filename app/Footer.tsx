@@ -1,12 +1,15 @@
 "use client";
 
-import gsap from "gsap";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
 import Javed from "@/public/javed.jpg";
+import JavedRasinText from "@/public/javed-rasin-text.svg";
 import { Outfit } from "next/font/google";
 import { useState, useEffect, useCallback } from "react";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 import {
 	AlertDialog,
@@ -21,7 +24,6 @@ import {
 
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 const outfit = Outfit({
 	subsets: ["latin"],
@@ -71,63 +73,75 @@ export default function Footer() {
 	}, [getBangladeshTime]);
 
 	return (
-		<footer className="flex justify-center items-center h-svh bg-[#1C1D20]">
-			<div className="flex flex-col items-center">
-				{/* Image and CTA */}
-				<div className="flex gap-x-6 items-center">
-					<Image
-						src={Javed}
-						alt="Javed Rasin scrolling on his phone"
-						placeholder="blur"
-						className="size-24 rounded-full hover:scale-110 transition-all duration-300"
-					/>
+		<footer className="flex flex-col">
+			<div className="flex justify-center items-center h-svh bg-[#1C1D20]">
+				<div className="flex flex-col items-center">
+					{/* Image and CTA */}
+					<div className="flex gap-x-6 items-center">
+						<Image
+							src={Javed}
+							alt="Javed Rasin scrolling on his phone"
+							placeholder="blur"
+							className="size-24 rounded-full hover:scale-110 transition-all duration-300"
+						/>
 
-					<p
-						className={`text-4xl md:text-6xl text-center text-white select-none ${outfit.className}`}
-					>
-						Let's work together.
-					</p>
-				</div>
-
-				{/* Line */}
-				<hr className="w-[0%] border-[#ffffff33] mt-10 md:mt-12" id="hr-line" />
-
-				{/* Time and contact */}
-				<div className="flex justify-between w-full items-start mt-5">
-					<div className="flex flex-col">
-						<p className="text-stone-400 text-sm">Local Time</p>
-						<p className="text-xl text-gray-200">
-							{time} <span className="text-sm text-stone-400">GMT+6</span>
+						<p
+							className={`text-4xl md:text-6xl text-center text-white select-none ${outfit.className}`}
+						>
+							Let's work together.
 						</p>
 					</div>
 
-					<AlertDialog>
-						<AlertDialogTrigger className="hover:cursor-pointer">
-							<p className="text-stone-400 select-none">Contact</p>
-						</AlertDialogTrigger>
+					{/* Line */}
+					<hr
+						className="w-[0%] border-[#ffffff33] mt-10 md:mt-12"
+						id="hr-line"
+					/>
 
-						<AlertDialogContent>
-							<AlertDialogHeader>
-								<AlertDialogTitle>Contact</AlertDialogTitle>
-								<AlertDialogDescription>
-									Let's get in touch.
-								</AlertDialogDescription>
-							</AlertDialogHeader>
+					{/* Time and contact */}
+					<div className="flex justify-between w-full items-start mt-5">
+						<div className="flex flex-col">
+							<p className="text-stone-400 text-sm">Local Time</p>
+							<p className="text-xl text-gray-200">
+								{time} <span className="text-sm text-stone-400">GMT+6</span>
+							</p>
+						</div>
 
-							<div className="flex flex-col gap-y-4 text-neutral-800">
-								<ContactFacebook />
-								<ContactPhone />
-								<ContactEmail />
-								<ContactAddress />
-							</div>
+						<AlertDialog>
+							<AlertDialogTrigger className="hover:cursor-pointer">
+								<p className="text-stone-400 select-none">Contact</p>
+							</AlertDialogTrigger>
 
-							<AlertDialogFooter>
-								<AlertDialogCancel>Close</AlertDialogCancel>
-							</AlertDialogFooter>
-						</AlertDialogContent>
-					</AlertDialog>
+							<AlertDialogContent>
+								<AlertDialogHeader>
+									<AlertDialogTitle>Contact</AlertDialogTitle>
+									<AlertDialogDescription>
+										Let's get in touch.
+									</AlertDialogDescription>
+								</AlertDialogHeader>
+
+								<div className="flex flex-col gap-y-4 text-neutral-800">
+									<ContactFacebook />
+									<ContactPhone />
+									<ContactEmail />
+									<ContactAddress />
+								</div>
+
+								<AlertDialogFooter>
+									<AlertDialogCancel>Close</AlertDialogCancel>
+								</AlertDialogFooter>
+							</AlertDialogContent>
+						</AlertDialog>
+					</div>
 				</div>
 			</div>
+
+			{/* Huge footer text */}
+			<Image
+				src={JavedRasinText}
+				alt="Javed Rasin"
+				className="w-full px-2 bg-[#1C1D20]"
+			/>
 		</footer>
 	);
 }
