@@ -1,9 +1,83 @@
+"use client";
+
 import Image from "next/image";
 import Javed7 from "@/public/Javed7.jpeg";
 import Pointer from "@/public/pointer.svg";
 import JavedRasinHerotext from "@/public/javed-rasin-hero-text.svg";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP);
+
 export default function Hero() {
+	useGSAP(() => {
+		const timeline = gsap.timeline();
+
+		// Hero Image
+		timeline
+			.to("#hero-image", {
+				duration: 1,
+				opacity: 1,
+				y: 0,
+				ease: "power2.out",
+			})
+
+			// Hero SVG
+			.to(
+				"#hero-svg",
+				{
+					duration: 1,
+					opacity: 1,
+					ease: "power2.out",
+				},
+				0.7,
+			)
+
+			// Subheading text
+			.to(
+				"#subheading-text",
+				{
+					duration: 1,
+					opacity: 1,
+					ease: "power2.out",
+				},
+				1,
+			)
+
+			// Left pointer 1
+			.to(
+				"#left-pointer-1",
+				{
+					duration: 1,
+					opacity: 1,
+					ease: "power2.out",
+				},
+				1.4,
+			)
+
+			// Left pointer 2
+			.to(
+				"#left-pointer-2",
+				{
+					duration: 1,
+					opacity: 1,
+					ease: "power2.out",
+				},
+				1.7,
+			)
+
+			// right pointer
+			.to(
+				"#right-pointer",
+				{
+					duration: 1,
+					opacity: 1,
+					ease: "power2.out",
+				},
+				2,
+			);
+	});
+
 	return (
 		<section
 			className="flex justify-center items-center min-h-svh bg-[#1C1D20]"
@@ -15,29 +89,34 @@ export default function Hero() {
 					priority
 					placeholder="blur"
 					alt="Javed Rasin looking up into the sky"
-					className="w-40"
+					className="w-40 transform translate-y-5 opacity-0"
+					id="hero-image"
 				/>
 
 				<Image
 					src={JavedRasinHerotext}
 					alt=""
 					priority
-					className="w-[40rem] px-5 mt-7"
+					className="w-[40rem] px-5 mt-7 opacity-0"
+					id="hero-svg"
 					// No alt because its a decorative text svg
 				/>
 
-				<p className="text-stone-400 max-w-[30rem] text-center mt-4 select-none">
+				<p
+					className="text-stone-400 max-w-[30rem] text-center mt-4 opacity-0 select-none"
+					id="subheading-text"
+				>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 					eiusmod tempor incididunt ut labore et dolore magna aliqua.
 				</p>
 
-				{/* Left pointer */}
-				<div className="absolute left-10 top-0">
+				{/* Left pointer 1 */}
+				<div className="absolute left-15 -top-5 opacity-0" id="left-pointer-1">
 					<div className="relative">
-						<p className="text-sm text-stone-400 -rotate-3 select-none">
+						<p className="text-sm text-stone-400 -rotate-3 select-none text-center">
 							Founder & CEO,
 							<br />
-							The SED Foundation.
+							SED Foundation.
 						</p>
 
 						<Image
@@ -49,13 +128,31 @@ export default function Hero() {
 					</div>
 				</div>
 
-				{/* Right pointers */}
-				<div className="absolute right-7 top-17">
+				{/* Left pointer 2 */}
+				<div className="absolute -left-5 top-50 opacity-0" id="left-pointer-2">
 					<div className="relative">
-						<p className="text-sm text-stone-400 rotate-3 select-none">
-							Legal Advocate,
+						<Image
+							src={Pointer}
+							alt=""
+							priority
+							className="absolute -right-5 -top-8 w-20 scale-y-[-1] -rotate-11"
+						/>
+
+						<p className="text-sm text-stone-400 select-none text-center">
+							Joint Convenor,
 							<br />
-							The Supreme Court.
+							National Citizen Party (NCP)
+						</p>
+					</div>
+				</div>
+
+				{/* Right pointer */}
+				<div className="absolute -right-6 top-17 opacity-0" id="right-pointer">
+					<div className="relative">
+						<p className="text-sm text-stone-400 rotate-3 select-none text-center">
+							Advocate,
+							<br />
+							Supreme Court Of Bangladesh.
 						</p>
 
 						<Image
