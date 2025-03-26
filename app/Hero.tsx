@@ -31,7 +31,7 @@ export default function Hero() {
 					eiusmod tempor incididunt ut labore et dolore magna aliqua.
 				</p>
 
-				{/* Pointers */}
+				{/* Left pointer */}
 				<div className="absolute left-10 top-0">
 					<div className="relative">
 						<p className="text-sm text-stone-400 -rotate-3 select-none">
@@ -44,7 +44,25 @@ export default function Hero() {
 							src={Pointer}
 							alt=""
 							priority
-							className="absolute -right-5 -bottom-8 w-23 rotate-4"
+							className="absolute right-0 -bottom-8 w-20 rotate-4"
+						/>
+					</div>
+				</div>
+
+				{/* Right pointers */}
+				<div className="absolute right-7 top-17">
+					<div className="relative">
+						<p className="text-sm text-stone-400 rotate-3 select-none">
+							Legal Advocate,
+							<br />
+							The Supreme Court.
+						</p>
+
+						<Image
+							src={Pointer}
+							alt=""
+							priority
+							className="absolute -left-5 -bottom-8 w-20 scale-x-[-1] -rotate-8"
 						/>
 					</div>
 				</div>
