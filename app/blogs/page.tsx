@@ -5,7 +5,7 @@ import BlogsSection from "./BlogsSection";
 export default function Page() {
 	return (
 		<>
-			<Navbar />
+			<Navbar buttonColor="#292524" backgroundColor="white" />
 
 			<main>
 				<BlogsSection />
