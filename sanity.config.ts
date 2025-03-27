@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
+import schemas from "@/sanity/schemas";
 
 export default defineConfig({
     title: "Javed Rasin Portfolio",
@@ -11,4 +12,5 @@ export default defineConfig({
     basePath: "/admin", // The route for the Sanity Studio
 
     plugins: [structureTool()],
+    schema: { types: schemas },
 });
