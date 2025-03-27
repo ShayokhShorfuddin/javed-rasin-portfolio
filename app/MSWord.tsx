@@ -178,7 +178,7 @@ function TextEditor() {
 		<div className="flex flex-col mx-auto pt-[3rem] gap-y-6 max-w-[60rem] pb-[5rem]">
 			{/* Heading */}
 			<p className="text-2xl text-center select-none">
-				From A Writer To Storyteller
+				The Tale Of A Storyteller
 			</p>
 
 			{/* Backstory of Javed Rasin */}
