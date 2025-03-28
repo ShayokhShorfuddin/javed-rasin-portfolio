@@ -1,15 +1,33 @@
+import Link from "next/link";
 import { Outfit } from "next/font/google";
 import Image, { type StaticImageData } from "next/image";
-
 import NatureVertical from "@/public/nature-vertical.jpg";
 import NatureHorizontal from "@/public/nature-horizontal.jpg";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import type { PortableTextBlock } from "@portabletext/react";
 
 const outfit = Outfit({
 	subsets: ["latin"],
 	weight: ["200", "300", "400"],
 });
+
+export type BlogType = {
+	_id: string;
+	_createdAt: Date;
+
+	title: string;
+	slug: string;
+	content: PortableTextBlock[];
+
+	thumbnail: {
+		asset: {
+			url: string;
+		};
+		alt: string;
+	};
+
+	date: Date;
+};
 
 export default function BlogsSection() {
 	return (
@@ -125,7 +143,7 @@ function BlogCard({
 }) {
 	return (
 		<Link href={href}>
-			<div className="flex flex-col w-full">
+			<div className="flex flex-col w-full group">
 				<Image src={image} alt={alt} priority className="h-60 object-cover" />
 
 				<p className="text-sm text-stone-700 mt-3">27/3/2025</p>
@@ -133,7 +151,10 @@ function BlogCard({
 				<div className="flex justify-between mt-2">
 					<p className="text-xl font-semibold max-w-[90%]">{title}</p>
 
-					<ArrowUpRight strokeWidth={1} />
+					<ArrowUpRight
+						strokeWidth={1}
+						className="opacity-0 group-hover:opacity-100 transition-opacity duration-220"
+					/>
 				</div>
 
 				<p className="text-sm mt-2 line-clamp-4 text-gray-800">{content}</p>
