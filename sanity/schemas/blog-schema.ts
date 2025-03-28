@@ -1,3 +1,5 @@
+import type { Rule } from "sanity";
+
 const blogSchema = {
     name: "blog",
     title: "Blogs",
@@ -10,7 +12,7 @@ const blogSchema = {
             title: "Title",
             type: "string",
 
-            validation: (rule: any) => rule.required(),
+            validation: (rule: Rule) => rule.required(),
         },
 
         // Slug for the blog (auto-generated from title). Looks like this: /blogs/my-blog-title
@@ -24,7 +26,7 @@ const blogSchema = {
                 maxLength: 96,
             },
 
-            validation: (rule: any) => rule.required(),
+            validation: (rule: Rule) => rule.required(),
         },
 
         // Content of the blog
@@ -33,7 +35,7 @@ const blogSchema = {
             title: "Content",
             type: "array",
 
-            validation: (rule: any) => rule.required(),
+            validation: (rule: Rule) => rule.required(),
 
             of: [{ type: "block" }], // Allows for rich text content
         },
@@ -44,7 +46,7 @@ const blogSchema = {
             title: "Thumbnail",
             type: "image",
 
-            validation: (rule: any) => rule.required(),
+            validation: (rule: Rule) => rule.required(),
 
             options: {
                 hotspot: true,
@@ -57,7 +59,7 @@ const blogSchema = {
                     title: "Alt text (Gets displayed if thumbnail fails to load)",
                     type: "string",
 
-                    validation: (rule: any) => rule.required(),
+                    validation: (rule: Rule) => rule.required(),
                 },
             ],
         },
@@ -68,7 +70,7 @@ const blogSchema = {
             title: "Date",
             type: "date",
 
-            validation: (rule: any) => rule.required(),
+            validation: (rule: Rule) => rule.required(),
         },
     ],
 };
