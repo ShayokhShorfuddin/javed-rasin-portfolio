@@ -157,7 +157,8 @@ export default function BlogsSection() {
 	);
 }
 
-// TODO: Take idea from NewsSection.tsx and implement the same for BlogsSection.tsx
+// TODO: Add more blogs and see if the pagination works
+// After that, make homepage responsive
 
 function BlogsGrid({
 	currentPage,
@@ -205,7 +206,12 @@ function BlogCard({
 		<Link href={`/blogs/${href}`}>
 			<div className="flex flex-col w-full group">
 				{/* Not using next/image because of its annoying Timeout error */}
-				<img src={image} alt={alt} className="h-60 object-cover" />
+				<img
+					src={image}
+					alt={alt}
+					fetchPriority="high"
+					className="h-60 object-cover"
+				/>
 
 				<p className="text-sm text-stone-700 mt-3">27/3/2025</p>
 
