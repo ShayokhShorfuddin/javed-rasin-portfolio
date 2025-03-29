@@ -155,8 +155,6 @@ export default function BlogsSection() {
 	);
 }
 
-// TODO: Make homepage responsive
-
 function BlogsGrid({
 	currentPage,
 	blogsData,
