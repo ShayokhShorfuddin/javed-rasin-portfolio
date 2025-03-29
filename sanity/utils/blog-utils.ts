@@ -46,5 +46,3 @@ export async function getBlogBySlug(slug: string): Promise<BlogType> {
         { cache: "no-store" }
     );
 }
-
-// TODO: Not tested if these grok queries work or not

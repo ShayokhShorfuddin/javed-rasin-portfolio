@@ -2,15 +2,13 @@
 
 import Link from "next/link";
 import { Outfit } from "next/font/google";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { PortableText, type PortableTextBlock } from "@portabletext/react";
 
 import {
 	Pagination,
 	PaginationContent,
 	PaginationItem,
-	PaginationNext,
-	PaginationPrevious,
 } from "@/components/ui/pagination";
 import { useEffect, useState } from "react";
 import { getBlogs } from "@/sanity/utils/blog-utils";
@@ -86,7 +84,7 @@ export default function BlogsSection() {
 			className="container mx-auto min-h-svh"
 			aria-label="All the blogs uploaded by Javed Rasin"
 		>
-			<div className="flex flex-col gap-y-20 items-center">
+			<div className="flex flex-col items-center mb-10">
 				<div className="flex flex-col gap-y-4 mt-20">
 					<h1
 						className={`text-4xl text-center font-light text-stone-800 ${outfit.className}`}
@@ -105,7 +103,7 @@ export default function BlogsSection() {
 					<div>
 						<svg
 							aria-hidden="true"
-							className="size-7 sm:size-8 md:size-9 lg:size-10 text-stone-200 animate-spin fill-stone-300"
+							className="size-7 sm:size-8 md:size-9 lg:size-10 text-stone-200 animate-spin fill-stone-300 mt-20"
 							viewBox="0 0 100 101"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +123,7 @@ export default function BlogsSection() {
 
 				{/* Error */}
 				{!isLoading && isError && (
-					<p className="text-red-500 text-center">
+					<p className="text-red-500 text-center mt-20">
 						Error while loading blogs.
 						<br />
 						Please try again later.
@@ -134,7 +132,7 @@ export default function BlogsSection() {
 
 				{/* No blogs available */}
 				{!isLoading && !isError && blogsData.length === 0 && (
-					<p>No blogs available for now.</p>
+					<p className="mt-20">No blogs available for now.</p>
 				)}
 
 				{/* Blogs available. Show Blogs grid and pagination */}
@@ -157,8 +155,7 @@ export default function BlogsSection() {
 	);
 }
 
-// TODO: Add more blogs and see if the pagination works
-// After that, make homepage responsive
+// TODO: Make homepage responsive
 
 function BlogsGrid({
 	currentPage,
@@ -171,11 +168,9 @@ function BlogsGrid({
 	const endIndex = startIndex + BLOGS_PER_PAGE;
 	const displayedBlogs = blogsData.slice(startIndex, endIndex);
 
-	console.log(blogsData[0].cardThumbnail);
-
 	return (
-		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-7 gap-y-12 w-full mb-26">
-			{blogsData.map((blog) => (
+		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-7 gap-y-12 w-full my-20 ">
+			{displayedBlogs.map((blog) => (
 				<BlogCard
 					key={blog.title}
 					image={blog.cardThumbnail.asset.url}
@@ -245,22 +240,30 @@ function PaginationSection({
 }) {
 	return (
 		<Pagination>
-			<PaginationContent className="mt-10">
+			<PaginationContent>
 				{currentPage > 1 && (
 					<PaginationItem>
-						<PaginationPrevious
+						<button
+							type="button"
 							onClick={() => onPrevPage()}
-							className="hover:cursor-pointer"
-						/>
+							className="px-3 py-2 hover:bg-gray-200 transform duration-200 hover:cursor-pointer flex justify-center items-center gap-x-1 rounded-lg text-sm"
+						>
+							<ChevronLeft size={15} />
+							Previous
+						</button>
 					</PaginationItem>
 				)}
 
 				{currentPage < totalPages && (
 					<PaginationItem>
-						<PaginationNext
+						<button
+							type="button"
 							onClick={() => onNextPage()}
-							className="hover:cursor-pointer"
-						/>
+							className="px-3 py-2 hover:bg-gray-200 transform duration-200 hover:cursor-pointer flex justify-center items-center gap-x-1 rounded-lg text-sm"
+						>
+							Next
+							<ChevronRight size={15} />
+						</button>
 					</PaginationItem>
 				)}
 			</PaginationContent>
