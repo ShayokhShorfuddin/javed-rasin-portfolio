@@ -16,7 +16,7 @@ export default function Alert() {
 	return (
 		<AlertDialog>
 			<AlertDialogTrigger className="hover:cursor-pointer">
-				<p className="text-stone-400 select-none">Contact</p>
+				<p className="text-stone-400 select-none text-sm xs:text-lg">Contact</p>
 			</AlertDialogTrigger>
 
 			<AlertDialogContent>

@@ -1,13 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import Javed from "@/public/javed.jpg";
 import JavedRasinText from "@/public/javed-rasin-footer-text.svg";
+import Javed from "@/public/javed.jpg";
 import { Outfit } from "next/font/google";
-import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
+import { useCallback, useEffect, useState } from "react";
 
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Alert from "./Alert";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -61,10 +61,10 @@ export default function Footer() {
 
 	return (
 		<footer className="flex flex-col">
-			<div className="flex justify-center items-center h-svh bg-[#1C1D20]">
+			<div className="flex justify-center items-center h-screen bg-[#1C1D20]">
 				<div className="flex flex-col items-center">
 					{/* Image and CTA */}
-					<div className="flex gap-x-6 items-center">
+					<div className="flex flex-col xs:flex-row gap-y-7 gap-x-6 items-center">
 						<Image
 							src={Javed}
 							alt="Javed Rasin scrolling on his phone"
@@ -73,7 +73,7 @@ export default function Footer() {
 						/>
 
 						<p
-							className={`text-4xl md:text-6xl text-center text-white select-none ${outfit.className}`}
+							className={`text-4xl md:text-6xl px-2 xs:px-0 text-center text-white select-none ${outfit.className}`}
 						>
 							Let's work together.
 						</p>
@@ -86,10 +86,10 @@ export default function Footer() {
 					/>
 
 					{/* Time and contact */}
-					<div className="flex justify-between w-full items-start mt-5">
+					<div className="flex justify-between w-full items-start mt-5 px-5">
 						<div className="flex flex-col">
 							<p className="text-stone-400 text-sm">Local Time</p>
-							<p className="text-xl text-gray-200">
+							<p className="text-lg xs:text-xl text-gray-200">
 								{time} <span className="text-sm text-stone-400">GMT+6</span>
 							</p>
 						</div>
@@ -103,7 +103,7 @@ export default function Footer() {
 			<Image
 				src={JavedRasinText}
 				alt="Javed Rasin"
-				className="w-full px-2 bg-[#1C1D20]"
+				className="hidden md:block w-full px-2 bg-[#1C1D20]"
 			/>
 		</footer>
 	);
