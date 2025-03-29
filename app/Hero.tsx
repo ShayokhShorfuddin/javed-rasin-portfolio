@@ -103,7 +103,7 @@ export default function Hero() {
 				/>
 
 				<p
-					className="text-stone-400 max-w-[30rem] text-center mt-4 opacity-0 select-none"
+					className="text-stone-400 text-sm sm:text-base mx-4 max-w-[30rem] text-center mt-4 opacity-0 select-none"
 					id="subheading-text"
 				>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -111,7 +111,10 @@ export default function Hero() {
 				</p>
 
 				{/* Left pointer 1 */}
-				<div className="absolute left-15 -top-5 opacity-0" id="left-pointer-1">
+				<div
+					className="hidden md:block absolute left-15 -top-5 opacity-0"
+					id="left-pointer-1"
+				>
 					<div className="relative">
 						<p className="text-sm text-stone-400 -rotate-3 select-none text-center">
 							Founder & CEO,
@@ -129,7 +132,10 @@ export default function Hero() {
 				</div>
 
 				{/* Left pointer 2 */}
-				<div className="absolute -left-5 top-50 opacity-0" id="left-pointer-2">
+				<div
+					className="hidden md:block absolute -left-5 top-50 opacity-0"
+					id="left-pointer-2"
+				>
 					<div className="relative">
 						<Image
 							src={Pointer}
@@ -147,7 +153,10 @@ export default function Hero() {
 				</div>
 
 				{/* Right pointer */}
-				<div className="absolute -right-6 top-17 opacity-0" id="right-pointer">
+				<div
+					className="hidden md:block absolute -right-6 top-17 opacity-0"
+					id="right-pointer"
+				>
 					<div className="relative">
 						<p className="text-sm text-stone-400 rotate-3 select-none text-center">
 							Advocate,
