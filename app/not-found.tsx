@@ -6,9 +6,12 @@ export default function NotFound() {
 	const router = useRouter();
 
 	return (
-		<main className="bg-[#1C1D20]">
-			<section className="flex justify-center items-center min-h-svh" aria-label="This page does not exist. Please go back.">
-				<div className="flex flex-col items-center text-stone-200">
+		<main>
+			<section
+				className="flex justify-center items-center min-h-svh"
+				aria-label="This page does not exist. Please go back."
+			>
+				<div className="flex flex-col items-center">
 					<h1 className="text-5xl">404</h1>
 					<p className="text-sm mt-2 text-center">
 						Hmm.. couldn't find this page

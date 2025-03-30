@@ -17,4 +17,4 @@ export default function Page() {
 }
 
 // TODO: Make sure home page animations run only once
-// TODO: Make homepage responsive
+// TODO: Make blogs responsive
