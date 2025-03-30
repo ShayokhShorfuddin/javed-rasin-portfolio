@@ -1,17 +1,17 @@
 "use client";
 
-import Link from "next/link";
-import { Outfit } from "next/font/google";
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { PortableText, type PortableTextBlock } from "@portabletext/react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Outfit } from "next/font/google";
+import Link from "next/link";
 
 import {
 	Pagination,
 	PaginationContent,
 	PaginationItem,
 } from "@/components/ui/pagination";
-import { useEffect, useState } from "react";
 import { getBlogs } from "@/sanity/utils/blog-utils";
+import { useEffect, useState } from "react";
 
 const outfit = Outfit({
 	subsets: ["latin"],
@@ -85,14 +85,14 @@ export default function BlogsSection() {
 			aria-label="All the blogs uploaded by Javed Rasin"
 		>
 			<div className="flex flex-col items-center mb-10">
-				<div className="flex flex-col gap-y-4 mt-20">
+				<div className="flex flex-col gap-y-4 mt-20 mx-5">
 					<h1
-						className={`text-4xl text-center font-light text-stone-800 ${outfit.className}`}
+						className={`text-2xl sm:text-3xl text-center font-light text-stone-900 ${outfit.className}`}
 					>
 						Javed Rasin's Blogs
 					</h1>
 
-					<p className="max-w-[30rem] text-center text-sm text-stone-700">
+					<p className="max-w-[30rem] text-center text-sm text-stone-800">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					</p>
@@ -167,7 +167,7 @@ function BlogsGrid({
 	const displayedBlogs = blogsData.slice(startIndex, endIndex);
 
 	return (
-		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-7 gap-y-12 w-full my-20 ">
+		<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-7 gap-y-12 w-full my-20 px-5">
 			{displayedBlogs.map((blog) => (
 				<BlogCard
 					key={blog.title}
