@@ -15,5 +15,3 @@ export default function Page() {
 		</>
 	);
 }
-
-// TODO: Make sure home page animations run only once

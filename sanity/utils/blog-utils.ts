@@ -29,7 +29,7 @@ export async function getBlogs(): Promise<BlogType[]> {
 }
 
 // Fetch single blog using slug
-export async function getBlogBySlug(slug: string): Promise<BlogType> {
+export function getBlogBySlug(slug: string): Promise<BlogType> {
     const client = createClient(ClientConfig);
 
     return client.fetch(
@@ -39,7 +39,7 @@ export async function getBlogBySlug(slug: string): Promise<BlogType> {
     title,
     "slug": slug.current,
     content,
-    "cardThumbnail": thumbnail{asset->{url}, alt},
+    "cardThumbnail": thumbnail{asset->{url, metadata {dimensions}}, alt},
     date
   }`,
         { slug },

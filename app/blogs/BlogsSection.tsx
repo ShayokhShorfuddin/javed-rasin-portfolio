@@ -31,6 +31,13 @@ export type BlogType = {
 	cardThumbnail: {
 		asset: {
 			url: string;
+
+			metadata: {
+				dimensions: {
+					width: number;
+					height: number;
+				};
+			};
 		};
 		alt: string;
 	};
@@ -203,7 +210,7 @@ function BlogCard({
 					src={image}
 					alt={alt}
 					fetchPriority="high"
-					className="h-60 object-cover"
+					className="h-60 object-contain"
 				/>
 
 				<p className="text-sm text-stone-700 mt-3">27/3/2025</p>
