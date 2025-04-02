@@ -70,7 +70,7 @@ export function ContactPhone() {
 	return (
 		<div className="flex gap-x-4">
 			<Phone strokeWidth={1.5} />
-			<p className="text-sm">+8801553657919</p>
+			<p className="text-sm">+8801778149680</p>
 		</div>
 	);
 }
