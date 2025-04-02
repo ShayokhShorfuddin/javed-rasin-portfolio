@@ -94,7 +94,7 @@ export default function BlogsSection() {
 			<div className="flex flex-col items-center mb-10">
 				<div className="flex flex-col gap-y-4 mt-20 mx-5">
 					<h1
-						className={`text-2xl sm:text-3xl text-center font-light text-stone-900 ${outfit.className}`}
+						className={`text-2xl sm:text-3xl text-center font-medium text-stone-900 ${outfit.className}`}
 					>
 						Javed Rasin's Blogs
 					</h1>
