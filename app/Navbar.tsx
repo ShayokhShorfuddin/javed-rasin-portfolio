@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export default function Navbar({
 	buttonColor,
@@ -33,7 +33,8 @@ export default function Navbar({
 				{isMenuOpen ? (
 					<button
 						type="button"
-						className="hover: cursor-pointer"
+						className="hover:cursor-pointer"
+						aria-label="Close Menu"
 						onClick={() => setIsMenuOpen(false)}
 					>
 						<X size={22} color={buttonColor} />
@@ -41,7 +42,8 @@ export default function Navbar({
 				) : (
 					<button
 						type="button"
-						className="hover: cursor-pointer"
+						className="hover:cursor-pointer"
+						aria-label="Menu"
 						onClick={() => setIsMenuOpen(true)}
 					>
 						<Menu size={22} color={buttonColor} />
