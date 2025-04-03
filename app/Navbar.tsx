@@ -75,6 +75,11 @@ function MobileNavbarDropdown({
 		>
 			<ul className="space-y-2.5">
 				<li>
+					<Link href="/">
+						<p className="text-sm text-nowrap">Home</p>
+					</Link>
+				</li>
+				<li>
 					<Link href="/blogs">
 						<p className="text-sm text-nowrap">Blogs</p>
 					</Link>
