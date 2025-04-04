@@ -15,3 +15,7 @@ export default function Page() {
 		</>
 	);
 }
+
+//TODO: Do the book listing and book slug
+// Do the news and events thingy
+// UI is on Obsidian Excalidraw

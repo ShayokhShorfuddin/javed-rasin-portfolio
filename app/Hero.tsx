@@ -187,7 +187,7 @@ export default function Hero() {
 						/>
 
 						<p className="text-sm text-stone-400 select-none text-center">
-							Writer, Editor & Publisher
+							Writer, Editor & Publisher,
 							<br />
 							Eha Prokash
 						</p>
