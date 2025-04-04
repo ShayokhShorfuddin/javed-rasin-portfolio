@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import Javed7 from "@/public/Javed7.jpeg";
-import Pointer from "@/public/pointer.svg";
+import Javed9 from "@/public/Javed9.jpeg";
 import JavedRasinHerotext from "@/public/javed-rasin-hero-text.svg";
+import Pointer from "@/public/pointer.svg";
+import Image from "next/image";
 
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 gsap.registerPlugin(useGSAP);
 
 export default function Hero() {
@@ -85,7 +85,7 @@ export default function Hero() {
 		>
 			<div className="relative flex flex-col items-center">
 				<Image
-					src={Javed7}
+					src={Javed9}
 					priority
 					placeholder="blur"
 					alt="Javed Rasin looking up into the sky"
