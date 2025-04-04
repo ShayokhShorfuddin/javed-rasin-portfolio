@@ -133,7 +133,7 @@ export default function Hero() {
 
 				{/* Left pointer 2 */}
 				<div
-					className="hidden md:block absolute -left-5 top-50 opacity-0"
+					className="hidden md:block absolute -left-5 top-49 opacity-0"
 					id="left-pointer-2"
 				>
 					<div className="relative">
@@ -152,9 +152,9 @@ export default function Hero() {
 					</div>
 				</div>
 
-				{/* Right pointer */}
+				{/* Right pointer 1 */}
 				<div
-					className="hidden md:block absolute -right-6 top-17 opacity-0"
+					className="hidden md:block absolute -right-6 top-3 opacity-0"
 					id="right-pointer"
 				>
 					<div className="relative">
@@ -170,6 +170,27 @@ export default function Hero() {
 							priority
 							className="absolute -left-5 -bottom-8 w-20 scale-x-[-1] -rotate-8"
 						/>
+					</div>
+				</div>
+
+				{/* Right pointer 2 */}
+				<div
+					className="hidden md:block absolute right-0 top-55 opacity-0"
+					id="left-pointer-2"
+				>
+					<div className="relative">
+						<Image
+							src={Pointer}
+							alt=""
+							priority
+							className="absolute -left-5 -top-10 w-20 -rotate-160"
+						/>
+
+						<p className="text-sm text-stone-400 select-none text-center">
+							Writer, Editor & Publisher
+							<br />
+							Eha Prokash
+						</p>
 					</div>
 				</div>
 			</div>
