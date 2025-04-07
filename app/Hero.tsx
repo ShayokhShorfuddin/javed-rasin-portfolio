@@ -52,7 +52,7 @@ export default function Hero() {
 					opacity: 1,
 					ease: "power2.out",
 				},
-				1.4,
+				1.2,
 			)
 
 			// Left pointer 2
@@ -63,18 +63,29 @@ export default function Hero() {
 					opacity: 1,
 					ease: "power2.out",
 				},
-				1.7,
+				1.4,
 			)
 
-			// right pointer
+			// right pointer 1
 			.to(
-				"#right-pointer",
+				"#right-pointer-1",
 				{
 					duration: 1,
 					opacity: 1,
 					ease: "power2.out",
 				},
-				2,
+				1.6,
+			)
+
+			// right pointer 2
+			.to(
+				"#right-pointer-2",
+				{
+					duration: 1,
+					opacity: 1,
+					ease: "power2.out",
+				},
+				1.8,
 			);
 	});
 
@@ -155,7 +166,7 @@ export default function Hero() {
 				{/* Right pointer 1 */}
 				<div
 					className="hidden md:block absolute -right-6 top-3 opacity-0"
-					id="right-pointer"
+					id="right-pointer-1"
 				>
 					<div className="relative">
 						<p className="text-sm text-stone-400 rotate-3 select-none text-center">
@@ -176,7 +187,7 @@ export default function Hero() {
 				{/* Right pointer 2 */}
 				<div
 					className="hidden md:block absolute right-0 top-55 opacity-0"
-					id="left-pointer-2"
+					id="right-pointer-2"
 				>
 					<div className="relative">
 						<Image
