@@ -10,7 +10,7 @@ import {
 	PaginationContent,
 	PaginationItem,
 } from "@/components/ui/pagination";
-import { getBlogs } from "@/sanity/utils/blog-utils";
+import { getNewsAndEvents } from "@/sanity/utils/news-and-events-utils";
 import { useEffect, useState } from "react";
 
 const outfit = Outfit({
@@ -18,9 +18,9 @@ const outfit = Outfit({
 	weight: ["200", "300", "400"],
 });
 
-const BLOGS_PER_PAGE = 6;
+const NEWS_AND_EVENTS_PER_PAGE = 6;
 
-export type BlogType = {
+export type NewsAndEventsType = {
 	_id: string;
 	_createdAt: Date;
 
@@ -45,17 +45,19 @@ export type BlogType = {
 	date: Date;
 };
 
-export default function BlogsSection() {
+export default function NewsAndEventsSection() {
 	const [currentPage, setCurrentPage] = useState(1);
-	const [blogsData, setBlogsData] = useState<BlogType[]>([]);
+	const [NewsAndEventsData, setNewsAndEventsData] = useState<
+		NewsAndEventsType[]
+	>([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [isError, setIsError] = useState(false);
 
 	useEffect(() => {
-		async function fetchBlogs() {
+		async function fetchNewsAndEventsData() {
 			try {
-				const data = await getBlogs();
-				setBlogsData(data);
+				const data = await getNewsAndEvents();
+				setNewsAndEventsData(data);
 			} catch (error) {
 				setIsError(true);
 			} finally {
@@ -63,10 +65,12 @@ export default function BlogsSection() {
 			}
 		}
 
-		fetchBlogs();
+		fetchNewsAndEventsData();
 	}, []);
 
-	const totalPages = Math.ceil(blogsData.length / BLOGS_PER_PAGE);
+	const totalPages = Math.ceil(
+		NewsAndEventsData.length / NEWS_AND_EVENTS_PER_PAGE,
+	);
 
 	function handleNextPage() {
 		window.scrollTo({
@@ -89,18 +93,18 @@ export default function BlogsSection() {
 	return (
 		<section
 			className="container mx-auto min-h-svh"
-			aria-label="All the blogs uploaded by Javed Rasin"
+			aria-label="Stay up to date with Javed Rasin's latest news and events"
 		>
 			<div className="flex flex-col items-center mb-10">
 				<div className="flex flex-col gap-y-2 mt-20 mx-5">
 					<h1
 						className={`text-2xl sm:text-3xl text-center font-medium text-stone-900 ${outfit.className}`}
 					>
-						Javed Rasin's Blogs
+						News and Events
 					</h1>
 
 					<p className="max-w-[30rem] text-center text-sm text-stone-800">
-						Explore Javed Rasin's insightful articles on various topics.
+						Stay up to date with Javed Rasin's latest news and events.
 					</p>
 				</div>
 
@@ -130,22 +134,25 @@ export default function BlogsSection() {
 				{/* Error */}
 				{!isLoading && isError && (
 					<p className="text-red-500 text-center mt-20">
-						Error while loading blogs.
+						Error while loading news and events.
 						<br />
 						Please try again later.
 					</p>
 				)}
 
-				{/* No blogs available */}
-				{!isLoading && !isError && blogsData.length === 0 && (
-					<p className="mt-20">No blogs available for now.</p>
+				{/* No news or events available */}
+				{!isLoading && !isError && NewsAndEventsData.length === 0 && (
+					<p className="mt-20">No news or events available for now.</p>
 				)}
 
-				{/* Blogs available. Show Blogs grid and pagination */}
-				{!isLoading && !isError && blogsData.length > 0 && (
+				{/* News and events available. Show grid and pagination */}
+				{!isLoading && !isError && NewsAndEventsData.length > 0 && (
 					<>
-						{/* Blogs grid */}
-						<BlogsGrid currentPage={currentPage} blogsData={blogsData} />
+						{/* News And Events grid */}
+						<NewsAndEventsGrid
+							currentPage={currentPage}
+							NewsAndEventsData={NewsAndEventsData}
+						/>
 
 						{/* Pagination */}
 						<PaginationSection
@@ -161,34 +168,34 @@ export default function BlogsSection() {
 	);
 }
 
-function BlogsGrid({
+function NewsAndEventsGrid({
 	currentPage,
-	blogsData,
+	NewsAndEventsData,
 }: {
 	currentPage: number;
-	blogsData: BlogType[];
+	NewsAndEventsData: NewsAndEventsType[];
 }) {
-	const startIndex = (currentPage - 1) * BLOGS_PER_PAGE;
-	const endIndex = startIndex + BLOGS_PER_PAGE;
-	const displayedBlogs = blogsData.slice(startIndex, endIndex);
+	const startIndex = (currentPage - 1) * NEWS_AND_EVENTS_PER_PAGE;
+	const endIndex = startIndex + NEWS_AND_EVENTS_PER_PAGE;
+	const displayedNewsAndEvents = NewsAndEventsData.slice(startIndex, endIndex);
 
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-7 gap-y-12 w-full my-20 px-5">
-			{displayedBlogs.map((blog) => (
-				<BlogCard
-					key={blog.title}
-					image={blog.cardThumbnail.asset.url}
-					alt={blog.cardThumbnail.alt}
-					href={blog.slug}
-					title={blog.title}
-					content={blog.content}
+			{displayedNewsAndEvents.map((entry) => (
+				<NewsAndEventCard
+					key={entry.title}
+					image={entry.cardThumbnail.asset.url}
+					alt={entry.cardThumbnail.alt}
+					href={entry.slug}
+					title={entry.title}
+					content={entry.content}
 				/>
 			))}
 		</div>
 	);
 }
 
-function BlogCard({
+function NewsAndEventCard({
 	image,
 	alt,
 	href,
@@ -202,7 +209,7 @@ function BlogCard({
 	content: PortableTextBlock[];
 }) {
 	return (
-		<Link href={`/blogs/${href}`}>
+		<Link href={`/news-and-events/${href}`}>
 			<div className="flex flex-col w-full group">
 				{/* Not using next/image because of its annoying Timeout error */}
 				<img
