@@ -50,13 +50,13 @@ export default function Navbar({
 					</button>
 				)}
 
-				{/* Mobile Navbar Dropdown */}
+				{/* Navbar Dropdown */}
 				<div
 					className={`${isMenuOpen ? "block" : "hidden"} absolute top-full right-0 mr-2 z-50`}
 					ref={dropdownRef}
 				>
 					<div className="animate-in fade-in duration-240">
-						<MobileNavbarDropdown backgroundColor={backgroundColor} />
+						<NavbarDropdown backgroundColor={backgroundColor} />
 					</div>
 				</div>
 			</nav>
@@ -64,10 +64,7 @@ export default function Navbar({
 	);
 }
 
-// The dropdown for mobile devices
-function MobileNavbarDropdown({
-	backgroundColor,
-}: { backgroundColor: string }) {
+function NavbarDropdown({ backgroundColor }: { backgroundColor: string }) {
 	return (
 		<div
 			className="border border-stone-700 rounded-xl px-4 py-3 w-min"
