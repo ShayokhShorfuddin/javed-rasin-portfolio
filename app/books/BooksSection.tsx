@@ -201,7 +201,7 @@ function BookCard({
 					src={cover}
 					alt={alt}
 					fetchPriority="high"
-					className="h-60 object-contain group-hover:scale-105 transform duration-200"
+					className="h-72 object-contain group-hover:-translate-y-2 transform duration-200"
 				/>
 
 				<div className="flex flex-col gap-y-1">
