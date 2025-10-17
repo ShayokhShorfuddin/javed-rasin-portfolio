@@ -7,9 +7,9 @@ import gsap from "gsap";
 // TODO: Check Remix discord on how to solve this issue
 // gsap.registerPlugin(useGSAP);
 
-import javed_hero from "@/public/javed-rasin-hero.jpeg";
-import javed_hero_text from "@/public/javed-rasin-hero-text.svg";
-import Pointer from "@/public/pointer.svg";
+import javed_hero from "@/assets/javed-rasin-hero.jpeg";
+import javed_hero_text from "@/assets/javed-rasin-hero-text.svg";
+import Pointer from "@/assets/pointer.svg";
 
 export default function Hero() {
 	useGSAP(() => {
@@ -90,10 +90,6 @@ export default function Hero() {
 				1.8,
 			);
 	});
-
-	// TODO: Add meta data
-	// "Javed Rasin | Portfolio",
-	// "Javed Rasin (Bengali: জাবেদ রাসিন) is a Bangladeshi poet & fiction writer. He has completed his graduation & post-graduation in law from the University of Dhaka.",
 
 	return (
 		<section
