@@ -4,4 +4,11 @@
 	--font-sans:
 		ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
 		"Segoe UI Symbol", "Noto Color Emoji";
+
+	--breakpoint-xs: 30rem;
+}
+
+/* Setting bg to #1C1D20 because the default white background was causing a mysterious thin line at the bottom of the footer on mobile devices */
+body {
+	background-color: #1c1d20;
 }

@@ -10,6 +10,17 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 
+export function meta() {
+	return [
+		{ title: "Javed Rasin | Portfolio" },
+		{
+			name: "description",
+			content:
+				"Javed Rasin (Bengali: জাবেদ রাসিন) is a Bangladeshi poet & fiction writer. He has completed his graduation & post-graduation in law from the University of Dhaka.",
+		},
+	];
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
@@ -19,7 +30,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<Meta />
 				<Links />
 			</head>
-			<body>
+
+			{/** biome-ignore lint/correctness/useUniqueElementIds: <required for modal> */}
+			<body id="root">
 				{children}
 				<ScrollRestoration />
 				<Scripts />

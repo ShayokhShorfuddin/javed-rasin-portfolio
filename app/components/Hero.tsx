@@ -4,8 +4,9 @@ import { useGSAP } from "@gsap/react";
 import { Image } from "@unpic/react";
 import gsap from "gsap";
 
-// TODO: Check Remix discord on how to solve this issue
-// gsap.registerPlugin(useGSAP);
+if (typeof window !== "undefined") {
+	gsap.registerPlugin(useGSAP);
+}
 
 import javed_hero from "@/assets/javed-rasin-hero.jpeg";
 import javed_hero_text from "@/assets/javed-rasin-hero-text.svg";

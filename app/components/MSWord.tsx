@@ -15,7 +15,7 @@ import {
 export default function MicrosoftWord() {
 	return (
 		<section
-			className="relative min-h-screen"
+			className="relative min-h-svh bg-white"
 			aria-label="Since Javed Rasin is writer, this section tries to present details about his backstory in a simulated Microsoft Word User Interface. This is not the Microsoft Word software itself, but rather a replica created using React and Tailwind CSS."
 		>
 			<TopLevelRibbon />
