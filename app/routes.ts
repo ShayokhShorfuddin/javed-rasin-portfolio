@@ -7,5 +7,3 @@ export default [
 		file: "routes/not-found.tsx",
 	},
 ] satisfies RouteConfig;
-
-// TODO: Add 404 not found page
