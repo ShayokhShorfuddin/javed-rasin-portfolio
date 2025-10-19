@@ -3,16 +3,19 @@
 import { useGSAP } from "@gsap/react";
 import { Image } from "@unpic/react";
 import gsap from "gsap";
-
-if (typeof window !== "undefined") {
-	gsap.registerPlugin(useGSAP);
-}
-
 import javed_hero from "@/assets/javed-rasin-hero.jpeg";
 import javed_hero_text from "@/assets/javed-rasin-hero-text.svg";
 import Pointer from "@/assets/pointer.svg";
 
+// GSAP plugin registration
+if (typeof window !== "undefined") {
+	gsap.registerPlugin(useGSAP);
+}
+
 export default function Hero() {
+	// useEffect(() => {
+	// }, []);
+
 	useGSAP(() => {
 		const timeline = gsap.timeline();
 

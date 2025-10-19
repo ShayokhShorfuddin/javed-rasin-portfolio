@@ -12,10 +12,6 @@ import javed_rasin_scrolling from "@/assets/javed-rasin-scrolling.jpg";
 // Necessary for screen readers and accessibility
 Modal.setAppElement("#root");
 
-if (typeof window !== "undefined") {
-	gsap.registerPlugin(useGSAP, ScrollTrigger);
-}
-
 // Required to position the modal correctly
 const customStyles = {
 	overlay: {
@@ -36,6 +32,11 @@ const customStyles = {
 	},
 };
 
+// GSAP plugin registration
+if (typeof window !== "undefined") {
+	gsap.registerPlugin(useGSAP, ScrollTrigger);
+}
+
 export default function Footer() {
 	const [time, setTime] = useState("");
 	const [modalIsOpen, setIsOpen] = useState(false);
@@ -47,6 +48,10 @@ export default function Footer() {
 	function openModal() {
 		setIsOpen(true);
 	}
+
+	// useEffect(() => {
+
+	// }, []);
 
 	useGSAP(() =>
 		gsap.to("#hr-line", {
