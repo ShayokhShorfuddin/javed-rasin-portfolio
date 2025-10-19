@@ -2,7 +2,7 @@
 import { useGSAP } from "@gsap/react";
 import { Image } from "@unpic/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import Modal from "react-modal";
