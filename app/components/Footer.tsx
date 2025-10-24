@@ -216,8 +216,8 @@ export function ContactPhone() {
 	return (
 		<div className="flex gap-x-4">
 			<Phone strokeWidth={1} />
-			<a href="tel:+8801778149680" className="text-sm">
-				+8801778149680
+			<a href="tel:+8801553657919" className="text-sm">
+				+8801553657919
 			</a>
 		</div>
 	);
